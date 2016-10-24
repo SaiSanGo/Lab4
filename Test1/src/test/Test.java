@@ -1,4 +1,4 @@
-
+package test;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -6,7 +6,9 @@ import java.util.regex.Pattern;
 public class Test {
 	
 	public static boolean expression(String str){
-		String str_p="^(((-?([a-zA-Z]+)\\s*(\\^\\s*([0-9]+))?)|(((-?\\d+(\\.\\d+)?)\\s*)(([a-zA-Z]+)(\\^\\s*([0-9]+))?)?\\s*))[\\+\\-\\*]\\s*)*((-?([a-zA-Z]+)\\s*(\\^\\s*([0-9]+))?)|(((-?\\d+(\\.\\d+)?)\\s*)(([a-zA-Z]+)(\\^\\s*([0-9]+))?)?\\s*))$";
+		String str_p="^(((-?([a-zA-Z]+)\\s*(\\^\\s*([0-9]+))?)|(((-?\\d+(\\.\\d+)?)\\s*)(([a-zA-Z]+)"
+				+ "(\\^\\s*([0-9]+))?)?\\s*))[\\+\\-\\*]\\s*)*((-?([a-zA-Z]+)\\s*(\\^\\s*([0-9]+))?)|"
+				+ "(((-?\\d+(\\.\\d+)?)\\s*)(([a-zA-Z]+)(\\^\\s*([0-9]+))?)?\\s*))$";
 		Pattern pat=Pattern.compile(str_p);
 		Matcher mat=pat.matcher(str);
 		boolean rs=mat.find();
@@ -76,10 +78,10 @@ public class Test {
 						c++;
 					}
 				}
-				if(c==1 & n1==1 & n2==0){
+				if(c==1 && n1==1 && n2==0){
 					s1="1";
 				}
-				else if(n2==0 & n1==c & c!=1){
+				else if(n2==0 && n1==c && c!=1){
 					s1=n1+"*"+str_array[1]+"^"+(n1-1);
 				}
 				else if(n1==0){
@@ -234,7 +236,7 @@ public class Test {
 		if(exp.equals(""))
 			exp=sum+"";
 		else{
-			if(exp.charAt(0)=='-' | exp.charAt(0)=='+'){
+			if(exp.charAt(0)=='-' || exp.charAt(0)=='+'){
 				if(sum!=0){
 					exp=sum+""+exp;
 				}
@@ -260,7 +262,7 @@ public class Test {
 		boolean rs;
 		long startTime=0,endTime=0;
 		do{
-			System.out.println("ÇëÊäÈë¶àÏîÊ½£º");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½");
 			str=input.nextLine();
 			rs=expression(str);
 		}while(rs==false);
@@ -268,12 +270,12 @@ public class Test {
 		String str1=change_add(str);	
 		
 		String str2="";
-		String Con="";
-		System.out.print("ÊÇ·ñÊäÈëÃüÁî£¨y or n£©£¿£º");
-		Con=input.next();
-		while(Con.equals("y")){
+		String con="";
+		System.out.print("ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¨y or nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+		con=input.next();
+		while(con.equals("y")){
 			input.nextLine();
-			System.out.print("ÇëÊäÈëÃüÁî£º");
+			System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£º");
 			str2=input.nextLine();
 			
 			String str_p1="^!simplify\\s*(\\s+([a-zA-Z]+)=(-?\\d+(\\.\\d+)?)[ ]*)*$";
@@ -296,11 +298,11 @@ public class Test {
 				System.out.println("Error Command!");
 			}
 			endTime=System.currentTimeMillis();
-			System.out.println("Ö´ÐÐ¿ªÊ¼Ê±¼ä£º "+startTime+"ms");
-			System.out.println("Ö´ÐÐ½áÊøÊ±¼ä£º "+endTime+"ms");
-			System.out.println("Ö´ÐÐ×ÜµÄÊ±¼ä£º "+(endTime-startTime)+"ms");
-			System.out.print("ÊÇ·ñ¼ÌÐøÊäÈëÃüÁî£¨y or n£©£¿£º");
-			Con=input.next();
+			System.out.println("Ö´ï¿½Ð¿ï¿½Ê¼Ê±ï¿½ä£º "+startTime+"ms");
+			System.out.println("Ö´ï¿½Ð½ï¿½ï¿½ï¿½Ê±ï¿½ä£º "+endTime+"ms");
+			System.out.println("Ö´ï¿½ï¿½ï¿½Üµï¿½Ê±ï¿½ä£º "+(endTime-startTime)+"ms");
+			System.out.print("ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¨y or nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+			con=input.next();
 		}
 		input.close();
 	}
